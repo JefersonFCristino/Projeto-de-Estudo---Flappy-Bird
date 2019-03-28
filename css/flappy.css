@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Pixel';
+    src: url('../fonts/Pixel.ttf');
+}
+
+/* ESTILO DA ÁREA DO JOGO */
+[wm-flappy] {
+    position: relative;
+    border: 5px solid dodgerblue;
+    height:  700px;
+    width: 1200px;
+    margin: 15px;
+    background-image: url('../imgs/Game_Background_110.jpg');
+    overflow: hidden; /* qualquer coisa que esteja fora da área da div vai ter o overflow escondido */
+}
+
+.passaro {
+    position: absolute;
+    width: 60px;
+    left: calc(50% - 30px);
+}
+
+.par-de-barreiras {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /*  estamos colocando um espaço entre as colunas (no caso, espaço entre as DIVs "barreira", que são nossos flex-items)*/
+}
+
+.barreira {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* alinhando o corpo e a borda da barreira ("corpo" e "borda" são os flex-items de "barreira") */
+}
+
+.barreira .borda { /* barreira E borda */
+    height: 30px;
+    width: 130px;
+    background: linear-gradient(90deg, #639301, #a5e82e);
+    border: 2px solid #000;
+}
+
+.barreira .corpo {
+    height: 150px;
+    width: 110px;
+    background: linear-gradient(90deg, #639301, #a5e82e);
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+.progresso {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: Pixel;
+    font-size: 70px;
+    z-index: 1; /* z-index positivo para que o ponto fique na frente dos canos */
+}
